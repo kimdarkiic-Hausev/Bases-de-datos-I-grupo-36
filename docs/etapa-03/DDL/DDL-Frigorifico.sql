@@ -81,7 +81,7 @@ CREATE TABLE VENTA (
         ON UPDATE CASCADE
 );
 GO
-
+--7. Tabla detalle-venta
 CREATE TABLE DETALLE_VENTA (
     id_venta INT NOT NULL,
     id_producto INT NOT NULL,
