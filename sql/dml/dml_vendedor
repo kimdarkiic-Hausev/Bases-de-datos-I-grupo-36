@@ -1,0 +1,10 @@
+INSERT INTO VENDEDOR (nombre_vendedor, apellido_vendedor, dni_vendedor, legajo, telefono_vendedor) VALUES
+('Sebastián', 'Franco', '46717321', 'LEG-001', '3794010101'),
+('Lucia', 'Garay', '46241524', 'LEG-002', '3794020202'),
+('Milagros', 'Gonzales', '46775536', 'LEG-003', '3794030303'),
+('Agustina', 'Ibalo', '46601661', 'LEG-004', '3794040404'),
+('Julieta', 'Romero', '44557617', 'LEG-005', '3794050505'),
+('Roberto', 'Benítez', '38112233', 'LEG-006', '3794060606'),
+('Andrea', 'Sosa', '39445566', 'LEG-007', '3794070707'),
+('Esteban', 'Valenzuela', '41778899', 'LEG-008', '3794080808');
+GO
