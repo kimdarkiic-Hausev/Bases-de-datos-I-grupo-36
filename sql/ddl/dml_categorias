@@ -1,0 +1,11 @@
+
+INSERT INTO CATEGORIA (nombre_categoria, descripcion) VALUES
+('Vacuno', 'Cortes cárnicos provenientes de ganado vacuno'),
+('Porcino', 'Cortes cárnicos provenientes de cerdo'),
+('Avícola', 'Pollo entero, trozado y subproductos avícolas'),
+('Embutidos', 'Fiambres, chorizos, morcillas y embutidos frescos o secos'),
+('Achuras', 'Vísceras y menudencias comestibles'),
+('Procesados', 'Hamburguesas, milanesas y elaborados cárnicos'),
+('Cordero', 'Cortes de ganado ovino'),
+('Especialidades', 'Cortes madurados, tomatazos y selección premium');
+GO
