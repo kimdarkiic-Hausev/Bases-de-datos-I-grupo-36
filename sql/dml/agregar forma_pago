@@ -1,0 +1,6 @@
+-- 5. Formas de Pago
+INSERT INTO FORMA_PAGO (descripcion) VALUES
+('Efectivo'), ('Tarjeta de Débito'), ('Tarjeta de Crédito'), 
+('Transferencia Bancaria'), ('Mercado Pago'), ('Cuenta Corriente Mayorista'), 
+('Cheque a 30 Días'), ('Vales de Compra');
+GO
