@@ -1,0 +1,10 @@
+INSERT INTO CLIENTE (nombre_cliente, apellido_cliente, razon_social, dni_cliente, cuit_cliente, telefono_cliente, email_cliente) VALUES
+('Consumidor', 'Final', 'Consumidor Final', NULL, NULL, NULL, NULL),
+('Carlos', 'Mendoza', NULL, '32111222', NULL, '3794112233', 'carlos.mendoza@gmail.com'),
+('María', 'Gómez', NULL, '35444555', NULL, '3794223344', 'maria.gomez@gmail.com'),
+('Carnicería', 'El Triunfo', 'El Triunfo S.R.L.', NULL, '30712345678', '3794334455', 'contacto@eltriunfo.com'),
+('Restaurante', 'Don Julio', 'Gastronomía Corrientes S.A.', NULL, '30888999112', '3794445566', 'compras@donjulio.com'),
+('Jorge', 'Fernández', NULL, '28999000', NULL, '3794556677', 'jorge.f@hotmail.com'),
+('Supermercado', 'Litoral', 'Litoral Retail S.A.', NULL, '30555444331', '3794667788', 'proveedores@litoral.com'),
+('Lucía', 'Ramírez', NULL, '40123123', NULL, '3794778899', 'lucia.ramirez@yahoo.com');
+GO
