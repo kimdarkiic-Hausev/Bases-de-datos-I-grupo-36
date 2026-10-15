@@ -1,4 +1,8 @@
-# Bases-de-datos-1-grupo-36(Proyecto-Grupal)
+# 🥩 BD1 Grupo 36 | Frigorífico Cárnico
+> **Sistema de Gestión de Ventas y Control de Stock: Frigorífico y Carnicería Industrial**  
+> Proyecto Integrador - Bases de Datos I (Año Lectivo 2026) — **Grupo 36**
+
+
 Sistema de Gestión de Ventas y Control de Stock: Frigorífico y Carnicería Industrial
 Proyecto integrador de Bases de Datos I (año lectivo 2026), Grupo 36.
 
