@@ -24,19 +24,7 @@ Soporta la convivencia de **canales minoristas** (atención de mostrador a consu
 
 ## 📁 Estructura del Repositorio
 
-
-├── docs/
-│   ├── etapa-01/    # Requerimientos, alcance y reglas de negocio
-│   ├── etapa-02/    # DER (Peter Chen), modelo relacional y normalización (3FN)
-│   ├── etapa-03/    # Informe de implementación física (DDL + DML)
-│   ├── etapa-04/    # Consultas SQL, casos de uso y reportes
-│   └── etapa-05/    # Temas técnicos avanzados (SPs, Triggers, Transacciones, Seguridad, Índices)
-│
-└── sql/
-    ├── ddl/         # Script de creación de la base FrigorificoDB y sus tablas
-    ├── dml/         # Scripts de carga inicial de datos por tabla
-    ├── consultas/   # Consultas de la Etapa IV (Facturas, reportes y clientes VIP)
-    └── tecnico/     # Scripts de la Etapa V (Lógica programada y optimización)
+<img width="700" height="273" alt="image" src="https://github.com/user-attachments/assets/1e30aee7-eea9-47d4-bad8-8a1b5ee85078" />
 
 
 
