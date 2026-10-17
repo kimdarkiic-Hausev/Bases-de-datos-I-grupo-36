@@ -51,14 +51,14 @@ GO
 
 
 -- SECCION 3: Consulta de Negocio
--- OBJETIVO: Identificar clientes VIP combinando las tablas CLIENTE y VENTA, aplicando un filtro HAVING
--- que evalua contra el promedio general de ventas.
+-- OBJETIVO: Identificar clientes VIP combinando las tablas CLIENTE, VENTA y DETALLE_VENTA, aplicando un filtro HAVING
+-- que evalua contra el gasto promedio por cliente.
 
 SELECT
     c.id_cliente,
     c.nombre_cliente + ' ' + c.apellido_cliente AS cliente,
     COUNT(DISTINCT v.id_venta) AS cantidad_compras,
-    SUM(dv.total) AS total_gastado
+    SUM(dv.subtotal) AS total_gastado
 FROM CLIENTE c
 INNER JOIN VENTA v ON c.id_cliente = v.id_cliente
 INNER JOIN DETALLE_VENTA dv ON v.id_venta = dv.id_venta
