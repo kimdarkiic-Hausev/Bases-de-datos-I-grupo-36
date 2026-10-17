@@ -57,14 +57,20 @@ GO
 SELECT
     c.id_cliente,
     c.nombre_cliente + ' ' + c.apellido_cliente AS cliente,
-    COUNT(v.id_venta) AS cantidad_compras,
-    SUM(v.total) AS total_gastado
+    COUNT(DISTINCT v.id_venta) AS cantidad_compras,
+    SUM(dv.total) AS total_gastado
 FROM CLIENTE c
 INNER JOIN VENTA v ON c.id_cliente = v.id_cliente
+INNER JOIN DETALLE_VENTA dv ON v.id_venta = dv.id_venta
 GROUP BY c.id_cliente, c.nombre_cliente, c.apellido_cliente
-HAVING SUM(v.total) > (
-    SELECT AVG(total)
-    FROM VENTA
+HAVING SUM(dv.subtotal) > (
+    SELECT AVG(t.total_cliente)
+    FROM (
+        SELECT v2.id_cliente, SUM(dv2.subtotal) AS total_cliente
+        FROM VENTA v2
+        INNER JOIN DETALLE_VENTA dv2 ON v2.id_venta = dv2.id_venta
+        GROUP BY v2.id_cliente
+    ) AS t
 )
 ORDER BY total_gastado DESC;
 GO
