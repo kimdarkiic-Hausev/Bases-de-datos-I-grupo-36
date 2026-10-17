@@ -6,17 +6,17 @@
 
 **ETAPA I: REQUERIMIENTOS Y DOMINIO DEL NEGOCIO** 
 
-**TEMA DEL PROYECTO** **~~Sistema de Gestión de~~ Ventas y Control de Stock NÚMERO DE GRUPO para Frigorífico y Carnicería Grupo 36** **<u>Industrial</u>** 
+**TEMA DEL PROYECTO** **Sistema de Gestión de Ventas y Control de Stock NÚMERO DE GRUPO para Frigorífico y Carnicería Grupo 36** **<u>Industrial</u>** 
 
 #### **INTEGRANTES DEL EQUIPO** 
 
 |**#**|**APELLIDO Y NOMBRE**|**DNI**|
 |---|---|---|
-|**1**|**Franco, Sebastián Mariano**|**46.717.321**|
-|**2**|**Garay, Lucia Valentina**|**46.241.524**|
-|**3**|**Gonzales, Milagros Esperanza**|**46.775.536**|
-|**4**|**Ibalo Pereyra, Agustina Beatriz**|**46.601.661**|
-|**5**|**Romero, Julieta Estefanía**|**44.557.617**|
+|**1**|**Franco, Sebastián Mariano**
+|**2**|**Garay, Lucia Valentina**
+|**3**|**Gonzales, Milagros Esperanza**
+|**4**|**Ibalo Pereyra, Agustina Beatriz**
+|**5**|**Romero, Julieta Estefanía**
 
 
 
