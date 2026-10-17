@@ -3,46 +3,100 @@
 > Proyecto Integrador - Bases de Datos I (Año Lectivo 2026) — **Grupo 36**
 
 
-Sistema de Gestión de Ventas y Control de Stock: Frigorífico y Carnicería Industrial
-Proyecto integrador de Bases de Datos I (año lectivo 2026), Grupo 36.
 
-Base de datos relacional en SQL Server que soporta el ciclo completo de venta de un frigorífico con canal minorista (mostrador) y mayorista (restaurantes, carnicerías, supermercados): productos vendidos por kilo o por unidad, control de stock automático y precios históricos por venta.
+## 📌 Descripción del Proyecto
 
-Integrantes
-Franco, Sebastián Mariano
-Garay, Lucía Valentina
-Gonzales, Milagros Esperanza
-Ibalo Pereyra, Agustina Beatriz
-Romero, Julieta Estefanía
+Sistema de base de datos relacional desarrollado en **SQL Server** diseñado para soportar el ciclo comercial y operativo completo de una empresa del rubro cárnico. 
 
-Estructura del repositorio
-docs/
-  etapa-01/   Requerimientos, alcance y reglas de negocio
-  etapa-02/   DER, modelo relacional y normalización (3FN)
-  etapa-03/   Informe de implementación (DDL + DML)
-  etapa-04/   Consultas SQL y casos de uso
-  etapa-05/   Temas técnicos (procedimientos, funciones, transacciones, triggers, seguridad, índices)
-sql/
-  ddl/        Creación de la base FrigorificoDB y sus tablas
-  dml/        Carga de datos de prueba por tabla
-  consultas/  Consultas de la etapa IV
-  tecnico/    Scripts de la etapa V
+Soporta la convivencia de **canales minoristas** (atención de mostrador a consumidores finales) y **canales mayoristas** (distribución a restaurantes, carnicerías de barrio y supermercados), gestionando productos por kilogramos o unidades, trazabilidad de precios históricos y control automático de inventario.
 
-Modelo de datos
 
-Tablas principales: CATEGORIA, PRODUCTO, CLIENTE, VENDEDOR, FORMA_PAGO, VENTA, DETALLE_VENTA.
 
-DER
+## 👥 Integrantes
 
-Decisiones de diseño destacadas:
-Precio congelado por venta: DETALLE_VENTA.precio_unitario guarda el precio del momento, así los aumentos en PRODUCTO.precio_actual no alteran el historial.
-Control de stock por trigger: TR_DETALLE_VENTA_CONTROL_STOCK rechaza la venta si no hay stock suficiente y, si lo hay, descuenta la cantidad vendida.
-Unidades de medida restringidas con CHECK (kilogramos o unidades).
-El detalle completo está en docs/etapa-02 y docs/etapa-03.
+* **Franco**, Sebastián Mariano
+* **Garay**, Lucía Valentina
+* **Gonzales**, Milagros Esperanza
+* **Ibalo Pereyra**, Agustina Beatriz
+* **Romero**, Julieta Estefanía
 
-Cómo ejecutarlo
-Requisitos: SQL Server y SQL Server Management Studio (o Azure Data Studio).
 
-Ejecutar sql/ddl/DDL_Frigorifico.sql, que crea la base FrigorificoDB y todas las tablas.
-Ejecutar los scripts de sql/dml/ en este orden, para respetar las claves foráneas: categoria → producto → cliente → vendedor → forma_pago → venta → detalle_venta.
-Ejecutar las consultas de sql/consultas/.
+
+## 📁 Estructura del Repositorio
+
+
+├── docs/
+│   ├── etapa-01/    # Requerimientos, alcance y reglas de negocio
+│   ├── etapa-02/    # DER (Peter Chen), modelo relacional y normalización (3FN)
+│   ├── etapa-03/    # Informe de implementación física (DDL + DML)
+│   ├── etapa-04/    # Consultas SQL, casos de uso y reportes
+│   └── etapa-05/    # Temas técnicos avanzados (SPs, Triggers, Transacciones, Seguridad, Índices)
+│
+└── sql/
+    ├── ddl/         # Script de creación de la base FrigorificoDB y sus tablas
+    ├── dml/         # Scripts de carga inicial de datos por tabla
+    ├── consultas/   # Consultas de la Etapa IV (Facturas, reportes y clientes VIP)
+    └── tecnico/     # Scripts de la Etapa V (Lógica programada y optimización)
+
+
+
+## 🗺️ Etapas del Proyecto
+
+### 📌 [Etapa I: Requerimientos y Dominio del Negocio](https://www.google.com/search?q=./docs/etapa-01/)
+
+Definición del alcance operativo para los canales minorista y mayorista, junto con las **Reglas de Negocio (RN)** que rigen la gestión de stock, registro de clientes, historial congelado de precios unitarios y métodos de pago.
+
+### 📐 [Etapa II: Modelado Conceptual y Lógico](https://www.google.com/search?q=./docs/etapa-02/)
+
+Diseño del **Diagrama Entidad-Relación (DER)** en notación Peter Chen (mediante ERDPlus), transformación al modelo relacional (PKs y FKs) y proceso documentado de normalización paso a paso (**UNF $\rightarrow$ 1FN $\rightarrow$ 2FN $\rightarrow$ 3FN**).
+
+### 🛠️ [Etapa III: Implementación Física (Scripts SQL)](https://www.google.com/search?q=./docs/etapa-03/)
+
+
+Construcción física en SQL Server:
+
+* **DDL:** Creación de tablas, restricciones `CHECK`, claves foráneas con reglas de borrado/actualización y columna calculada `PERSISTED` para subtotales.
+* **Control de Stock:** Trigger `TR_DETALLE_VENTA_CONTROL_STOCK` para validación y descuento automático de inventario en tiempo real.
+* **DML:** Carga inicial ordenada de datos de prueba para asegurar la integridad referencial.
+
+### 📊 [Etapa IV: Consultas y Casos de Uso](https://www.google.com/search?q=./docs/etapa-04/)
+
+Desarrollo y prueba de necesidades de información del negocio:
+
+* **Consigna 1 (Factura / Comprobante):** Consulta consolidada de encabezado y detalle con `SUM(...) OVER(PARTITION BY id_venta)`.
+* **Consigna 2 (Reportes Agregados):** Análisis multidimensional por período (vendedor, categoría, forma de pago y producto) mediante `GROUP BY`, `SUM`, `COUNT` y `AVG`.
+* **Consigna 3 (Consulta Avanzada):** Segmentación de clientes VIP/mayoristas mediante `JOIN` multitabla, filtros `HAVING` y subconsultas dinámicas sobre el gasto promedio general.
+
+### ⚙️ [Etapa V: Implementación de Temas Técnicos Avanzados](https://www.google.com/search?q=./docs/etapa-05/)
+
+Mecanismos y estructuras avanzadas para asegurar solidez, seguridad y rendimiento:
+
+* **Procedimientos y Funciones Almacenadas (SPs & Functions):** Encapsulamiento de lógica frecuente.
+* **Transacciones (`BEGIN TRAN / COMMIT / ROLLBACK`):** Garantía de propiedades ACID en operaciones críticas.
+* **Triggers de Auditoría:** Registro automático de modificaciones y auditoría de eventos.
+* **Seguridad y Permisos:** Roles, usuarios y privilegios acotados.
+* **Índices y Optimización:** Estructuras `CLUSTERED` y `NONCLUSTERED` para acelerar consultas frecuentes.
+
+
+
+## 🚀 Guía de Ejecución
+
+### **Requisitos Previos**
+
+* SQL Server (2019 o superior / Express)
+* SQL Server Management Studio (SSMS) o Azure Data Studio
+
+### **Orden de Ejecución de Scripts**
+
+1. **Creación de la Estructura (DDL):**
+Ejecutar `sql/ddl/DDL_Frigorifico.sql` para crear la base de datos `FrigorificoDB` y sus tablas.
+2. **Carga de Datos (DML):**
+Ejecutar los scripts dentro de `sql/dml/` respetando las dependencias jerárquicas:
+CATEGORIA / CLIENTE / VENDEDOR / FORMA_PAGO-->PRODUCTO--> VENTA --> DETALLE_VENTA
+
+
+3. **Consultas y Casos de Uso (Etapa IV):**
+Ejecutar los archivos ubicados en `sql/consultas/` (o `sql/consultas/Etapa4CasosPrueba.sql`).
+4. **Objetos Técnicos Avanzados (Etapa V):**
+Ejecutar los scripts correspondientes dentro de `sql/tecnico/`.
+
