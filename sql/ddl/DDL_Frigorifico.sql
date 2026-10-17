@@ -34,11 +34,16 @@ CREATE TABLE CLIENTE (
     nombre_cliente VARCHAR(50) NOT NULL,
     apellido_cliente VARCHAR(50) NOT NULL,
     razon_social VARCHAR(100) NULL,
-    dni_cliente VARCHAR(15) NULL CONSTRAINT UQ_Cliente_DNI UNIQUE,
-    cuit_cliente VARCHAR(15) NULL CONSTRAINT UQ_Cliente_CUIT UNIQUE,
+    dni_cliente VARCHAR(15) NULL,
+    cuit_cliente VARCHAR(15) NULL,
     telefono_cliente VARCHAR(20) NULL,
     email_cliente VARCHAR(100) NULL
 );
+GO
+
+-- UNIQUE que ignora NULL (consumidor final / empresas sin DNI)
+CREATE UNIQUE INDEX UQ_Cliente_DNI  ON CLIENTE(dni_cliente)  WHERE dni_cliente  IS NOT NULL;
+CREATE UNIQUE INDEX UQ_Cliente_CUIT ON CLIENTE(cuit_cliente) WHERE cuit_cliente IS NOT NULL;
 GO
 
 -- 4. Tabla VENDEDOR
