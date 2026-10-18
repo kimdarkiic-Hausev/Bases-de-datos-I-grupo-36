@@ -1,3 +1,4 @@
+USE FrigorificoDB;
 INSERT INTO CATEGORIA (nombre_categoria, descripcion) VALUES
 ('Vacuno', 'Cortes cárnicos provenientes de ganado vacuno'),
 ('Porcino', 'Cortes cárnicos provenientes de cerdo'),
