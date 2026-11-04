@@ -71,7 +71,7 @@ Se ejecuta con `EXEC esquema.nombre @parametro1 = valor, @parametro2 = valor;`.
 - Se usa `>` porque la regla dice "más de".
 - Devuelve 0.10 y no 10 para poder aplicarlo directo: `total × (1 − descuento)`.
 
-Script: [`sql/tecnico/Funciones/01_funcion_descuento.sql`](../../../sql/tecnico/Funciones/01_funcion_descuento.sql)
+Script: [`sql/tecnico/Funciones/funcion_descuento.sql`](../../../sql/tecnico/Funciones/funcion_descuento.sql)
 
 ### Procedimiento `dbo.sp_RegistrarVentaCompleta`
 
