@@ -1,7 +1,7 @@
 -- Etapa V - Tema 1: Procedimiento almacenado
 -- Registra una venta de un producto: precio historico, descuento, encabezado y detalle.
 -- El stock lo valida y descuenta el trigger TR_DETALLE_VENTA_CONTROL_STOCK.
--- Requiere sql/tecnico/Funciones/01_funcion_descuento.sql.
+-- Requiere sql/tecnico/Funciones/funcion_descuento.sql.
 USE FrigorificoDB;
 GO
 
