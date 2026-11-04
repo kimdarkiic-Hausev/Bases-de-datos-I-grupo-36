@@ -1,0 +1,7 @@
+UPDATE PRODUCTO
+SET precio_actual = 9000.00
+WHERE id_producto = 1;
+GO
+
+SELECT *
+FROM AUDITORIA_PRECIOS;
